@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anniversary Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #f9f2ef;
+  }
+
+  .page {
+    display: none;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .page.active {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .btn {
+    margin-top: 30px;
+    padding: 14px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: #d4a373;
+    color: white;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: #b5835a;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <img src="page1.jpg">
+  <button class="btn" onclick="nextPage(1)">Start Our Journey</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <img src="page2.jpg">
+  <button class="btn" onclick="nextPage(2)">Next Chapter</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <img src="page3.jpg">
+  <button class="btn" onclick="nextPage(3)">Next Chapter</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <img src="page4.jpg">
+  <button class="btn" onclick="nextPage(4)">Next Chapter</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+  <img src="page5.jpg">
+</div>
+
+<script>
+  function nextPage(current) {
+    document.getElementById("page" + current).classList.remove("active");
+    document.getElementById("page" + (current + 1)).classList.add("active");
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
